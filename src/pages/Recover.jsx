@@ -17,6 +17,7 @@ export const Recover = () => {
     code: "",
     password: "",
   });
+
   const handleChange = (e) =>
     setRecover({ ...recover, [e.target.name]: e.target.value });
 
@@ -73,6 +74,7 @@ export const Recover = () => {
               style={{ display: "flex", flexDirection: "column", gap: "10px" }}
             >
               <Input
+                disabled={onConfirm}
                 type="text"
                 placeholder="Username"
                 name="username"

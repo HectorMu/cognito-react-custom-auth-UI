@@ -15,6 +15,7 @@ export const ConfirmSignup = () => {
     username: "",
     code: "",
   });
+
   const handleChange = (e) =>
     setConfirm({ ...confirm, [e.target.name]: e.target.value });
 

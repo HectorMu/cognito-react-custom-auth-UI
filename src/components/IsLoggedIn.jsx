@@ -1,13 +1,15 @@
 import { Navigate } from "react-router-dom";
-import { Auth } from "aws-amplify";
 import { useSession } from "../hooks/useSession";
-import { useEffect } from "react";
 
+//View is the component to render
 const IsLoggedIn = ({ view: View }) => {
-  const { user, setUser } = useSession();
+  //Extract the user from the Session global context
+  const { user } = useSession();
 
+  //If there is not a user logged in return to login page
   if (!user) return <Navigate to={"/login"} />;
 
+  //If user is logged in return the view requested
   return <View />;
 };
 
